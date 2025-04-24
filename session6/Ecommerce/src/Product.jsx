@@ -1,64 +1,51 @@
 import React from 'react'
+import AddToCartBtm from './AddToCartBtm'
 
 export default function Product() {
+    const products = [
+        {
+            id:1,
+            brand:"samsung",
+            model:"s24 ultra",
+            price:100000,
+            image:"https://th.bing.com/th/id/OIP.i3dZPTG8ooYywpOJCSzE3gHaHZ?rs=1&pid=ImgDetMain",
+            descreption:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, ut!"
+        },
+        {
+            id:2,
+            brand:"Apple",
+            model:"iphone 16",
+            price:60000,
+            image:"https://th.bing.com/th/id/OIP.K--7GuaoEhLA_TNdO_s22AHaEK?rs=1&pid=ImgDetMain",
+            descreption:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, ut!"
+        },
+        {
+            id:3,
+            brand:"Google",
+            model:"Pixel",
+            price:80000,
+            image:"https://th.bing.com/th/id/OIP.wgIGOMDJvt0pyOTZ1VEM5wHaEK?rs=1&pid=ImgDetMain",
+            descreption:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, ut!"
+        },
+    ]
   return (
-    <div className='flex justify-around flex-wrap'>
-        <div className="card bg-base-100 w-96 shadow-sm">
-        <figure>
-            <img
-            src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-            alt="Shoes" />
-        </figure>
-        <div className="card-body">
-            <h2 className="card-title">Card Title</h2>
-            <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
-            <div className="card-actions justify-end">
-            <button className="btn btn-primary">Buy Now</button>
-            </div>
-        </div>
-        </div>
-        <div className="card bg-base-100 w-96 shadow-sm">
-        <figure>
-            <img
-            src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-            alt="Shoes" />
-        </figure>
-        <div className="card-body">
-            <h2 className="card-title">Card Title</h2>
-            <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
-            <div className="card-actions justify-end">
-            <button className="btn btn-primary">Buy Now</button>
-            </div>
-        </div>
-        </div>
-        <div className="card bg-base-100 w-96 shadow-sm">
-        <figure>
-            <img
-            src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-            alt="Shoes" />
-        </figure>
-        <div className="card-body">
-            <h2 className="card-title">Card Title</h2>
-            <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
-            <div className="card-actions justify-end">
-            <button className="btn btn-primary">Buy Now</button>
-            </div>
-        </div>
-        </div>
-        <div className="card bg-base-100 w-96 shadow-sm">
-        <figure>
-            <img
-            src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-            alt="Shoes" />
-        </figure>
-        <div className="card-body">
-            <h2 className="card-title">Card Title</h2>
-            <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
-            <div className="card-actions justify-end">
-            <button className="btn btn-primary">Buy Now</button>
-            </div>
-        </div>
-        </div>
+    <div className='flex justify-around'>
+        {products.map((pro)=>
+            <div className="card bg-base-100 w-96 shadow-sm">
+                <figure>
+                <img
+                    src={pro.image}
+                    alt="Shoes" />
+                </figure>
+                <div className="card-body bg-green-600">
+                <h2 className="card-title">{pro.brand}</h2>
+                <p>{pro.descreption}</p>
+                <div className="card-actions justify-end">
+                    <AddToCartBtm />
+                </div>
+                </div>
+          </div>  
+        )}
     </div>
   )
 }

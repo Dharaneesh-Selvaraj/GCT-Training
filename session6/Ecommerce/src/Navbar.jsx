@@ -1,17 +1,17 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import { Link} from 'react-router-dom';
 
 export default function Navbar() {
   return (
     <div className="navbar bg-base-100 shadow-sm">
         <div className="flex-1">
-            <Link to="/">
+            <Link to="/buyer">
                 <a className="btn btn-ghost text-xl">Home</a>
             </Link>
-            <Link to="/pro">
+            <Link to="pro">
                 <a className="btn btn-ghost text-xl">Products</a>
             </Link>
-            <Link to="/cart">
+            <Link to="cart">
                 <a className="btn btn-ghost text-xl">Cart</a>
             </Link>
             <a className="btn btn-ghost text-xl">Profile</a>
@@ -40,6 +40,7 @@ export default function Navbar() {
             </ul>
             </div>
         </div>
+        
     </div>
   )
 }
